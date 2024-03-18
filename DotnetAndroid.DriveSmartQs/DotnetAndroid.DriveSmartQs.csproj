@@ -9,4 +9,24 @@
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DriveSmart.DSTracker" Version="1.2.1" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7" />
+    <PackageReference Include="Xamarin.AndroidX.Core" Version="1.12.0.4" />
+    <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.6.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <GradleRepository Include="https://tfsdrivesmart.pkgs.visualstudio.com/5243836b-8777-4cb6-aded-44ab518bc748/_packaging/Android_Libraries/maven/v1">
+      <Repository>
+        maven {
+          url 'https://tfsdrivesmart.pkgs.visualstudio.com/5243836b-8777-4cb6-aded-44ab518bc748/_packaging/Android_Libraries/maven/v1'
+          name 'Android_Libraries'
+          credentials {
+              username tfsdrivesmart_user
+              password tfsdrivesmart_password
+          }
+      }
+      </Repository>
+    </GradleRepository>
+  </ItemGroup>
 </Project>
