@@ -16,7 +16,7 @@ tfsdrivesmart_password=YOUR_PASSWORD
 1/ Add the NuGet package
 
 ```
-<PackageReference Include="DriveSmart.DSTracker" Version="1.2.1" />
+<PackageReference Include="DriveSmart.DSTracker" Version="1.2.1.2" />
 ```
 
 2/ Amend your CSPROJ file to have these lines
