@@ -7,7 +7,6 @@ using Com.Dstracker.Interfaces;
 using Com.Dstracker.Models;
 using Com.Dstracker.Singleton;
 using Java.Lang;
-using Kotlin.Jvm.Functions;
 
 namespace DotnetAndroid.DriveSmartQs;
 
@@ -272,48 +271,4 @@ public class MainActivity : AppCompatActivity, IManagerInterface
     // ****************************************v****************************************
     // ******************** interface DSManagerInterface *******************************
     // ****************************************v****************************************
-}
-
-public static class TrackerExtensions
-{
-    public static void GetOrAddUserIdBy(this Tracker tracker, string userId, Action<Outcome> action)
-    {
-        var func1 = new Function1Action<Outcome>(action);
-        tracker.GetOrAddUserIdBy(userId, func1);
-    }
-    public static void Configure(this Tracker tracker, string userId, Action<Outcome> action)
-    {
-        var func1 = new Function1Action<Outcome>(action);
-        tracker.SetUserId(userId, func1);
-    }
-    public static void SetUserId(this Tracker tracker, string userId, Action<Outcome> action)
-    {
-        var func1 = new Function1Action<Outcome>(action);
-        tracker.SetUserId(userId, func1);
-    }    public static void Start(this Tracker tracker, string withMetaData, Action<Outcome> action)
-    {
-        var func1 = new Function1Action<Outcome>(action);
-        tracker.Start(withMetaData, func1);
-    }
-    public static void Stop(this Tracker tracker, string userId, Action<Outcome> action)
-    {
-        var func1 = new Function1Action<Outcome>(action);
-        tracker.Stop(func1);
-    }
-}
-
-public class Function1Action<T> : Java.Lang.Object, IFunction1
-{
-    private readonly Action<T> action;
-
-    public Function1Action(Action<T> action)
-    {
-        this.action = action;
-    }
-
-    public Java.Lang.Object? Invoke(Java.Lang.Object? p0)
-    {
-        action?.Invoke((T)(object)p0);
-        return null;
-    }
 }
