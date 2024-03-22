@@ -63,34 +63,9 @@ public class MainActivity : AppCompatActivity, IManagerInterface
 
         SetContentView(Resource.Layout.activity_main);
 
-        defineConstants();
-        prepareEnvironment();
-        prepareView();
-    }
-
-    private void prepareView()
-    {
-        updateTimerThread = new Runnable(() =>
-        {
-            TrackingStatus beanStatus = dsTracker.Status;
-
-            if (initialInfo)
-            {
-                addLog("Trip ID: " + beanStatus.TripID);
-                initialInfo = false;
-            }
-
-            addLog("Timer: " + convertMillisecondsToHMmSs(beanStatus.ServiceTime));
-            addLog("Distance: " + beanStatus.TotalDistance);
-
-            handlerTrip.PostDelayed(updateTimerThread, 2000);
-        });
-
-        handlerTrip = new Handler(MainLooper);
         logText = FindViewById<TextView>(Resource.Id.log_text);
         logText.MovementMethod = new ScrollingMovementMethod();
 
-        checkPerms();
         checkPermButton = FindViewById<Button>(Resource.Id.check_perm_button);
         checkPermButton.Click += (s, e) => checkPerms();
 
@@ -99,6 +74,7 @@ public class MainActivity : AppCompatActivity, IManagerInterface
 
         stopTripButton = FindViewById<Button>(Resource.Id.stop_trip_button);
         stopTripButton.Click += (s, e) => dsTracker.Stop();
+
 
         setUserButton = FindViewById<Button>(Resource.Id.set_user_button);
         setUserButton.Click += (s, e) =>
@@ -125,6 +101,32 @@ public class MainActivity : AppCompatActivity, IManagerInterface
                 getOrAddUser(userId.Text);
             }
         };
+        updateTimerThread = new Runnable(() =>
+        {
+            TrackingStatus beanStatus = dsTracker.Status;
+
+            if (initialInfo)
+            {
+                addLog("Trip ID: " + beanStatus.TripID);
+                initialInfo = false;
+            }
+
+            addLog("Timer: " + convertMillisecondsToHMmSs(beanStatus.ServiceTime));
+            addLog("Distance: " + beanStatus.TotalDistance);
+
+            handlerTrip.PostDelayed(updateTimerThread, 2000);
+        });
+
+        handlerTrip = new Handler(MainLooper);
+
+        defineConstants();
+        prepareEnvironment();
+        prepareView();
+    }
+
+    private void prepareView()
+    {
+        checkPerms();
     }
 
     private void checkPerms()

@@ -28,6 +28,9 @@ private void defineConstants()
 
 ```xml
 <PackageReference Include="DriveSmart.DSTracker" Version="1.2.1.3" />
+<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.9.23" />
+<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk7" Version="1.9.23" />
+<PackageReference Include="Xamarin.AndroidX.Work.Work.Runtime.Ktx" Version="2.9.0.1" />
 ```
 
 2/ Amend your CSPROJ file to have these lines
