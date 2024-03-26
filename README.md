@@ -5,13 +5,16 @@ This is the ported example for Drive Smart libraries for Android. The original e
 # How to run the sample app
 
 1/ Create `~/.gradle/gradle.properties` file using Visual Studio Code or VIM
+
 2/ Ensure you have following lines
 ```
 tfsdrivesmart_user=YOUR_USERNAME
 tfsdrivesmart_password=YOUR_PASSWORD
 ```
+
 3/ Create an empty `MainActivity.dev.cs` file
-3/ Set your apkId and userId in **defineConstants** in `MainActivity.dev.cs`
+
+4/ Set your apkId and userId in **defineConstants** in `MainActivity.dev.cs`
 
 ```c#
 namespace DotnetAndroid.DriveSmartQs;
