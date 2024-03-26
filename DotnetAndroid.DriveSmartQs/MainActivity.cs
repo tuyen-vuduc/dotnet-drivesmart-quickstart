@@ -17,7 +17,7 @@ namespace DotnetAndroid.DriveSmartQs;
     MainLauncher = true,
     Theme = "@style/Theme.MyApplication.NoActionBar",
     Exported = true)]
-public class MainActivity : AppCompatActivity, IManagerInterface
+public partial class MainActivity : AppCompatActivity, IManagerInterface
 {
     private Tracker dsTracker;
 
@@ -39,7 +39,6 @@ public class MainActivity : AppCompatActivity, IManagerInterface
     private TextView permGpsSemiStatus;
     private TextView permGpsAutoStatus;
 
-
     public static readonly string[] PERMISSIONS_GPS = {
         Manifest.Permission.AccessCoarseLocation,
         Manifest.Permission.AccessFineLocation
@@ -50,12 +49,7 @@ public class MainActivity : AppCompatActivity, IManagerInterface
         Manifest.Permission.AccessBackgroundLocation
     };
 
-    private void defineConstants()
-    {
-        // TODO
-        apkID = "";
-        userID = "";
-    }
+    private partial void defineConstants();
 
     protected override void OnCreate(Bundle savedInstanceState)
     {

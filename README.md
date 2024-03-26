@@ -10,14 +10,20 @@ This is the ported example for Drive Smart libraries for Android. The original e
 tfsdrivesmart_user=YOUR_USERNAME
 tfsdrivesmart_password=YOUR_PASSWORD
 ```
-3/ Set your apkId and userId in **defineConstants**
+3/ Create an empty `MainActivity.dev.cs` file
+3/ Set your apkId and userId in **defineConstants** in `MainActivity.dev.cs`
 
 ```c#
-private void defineConstants()
-{
-    // TODO
-    apkID = "";
-    userID = "";
+namespace DotnetAndroid.DriveSmartQs;
+
+partial class MainActivity
+{ 
+    private partial void defineConstants()
+    {
+        // TODO
+        apkID = "YOUR_APK_ID";
+        userID = "YOUR_USER_ID";
+    }
 }
 ```
 
@@ -27,10 +33,7 @@ private void defineConstants()
 1/ Add the NuGet package
 
 ```xml
-<PackageReference Include="DriveSmart.DSTracker" Version="1.2.1.3" />
-<PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.9.23" />
-<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk7" Version="1.9.23" />
-<PackageReference Include="Xamarin.AndroidX.Work.Work.Runtime.Ktx" Version="2.9.0.1" />
+<PackageReference Include="DriveSmart.DSTracker" Version="1.5.80" />
 ```
 
 2/ Amend your CSPROJ file to have these lines
