@@ -14,6 +14,8 @@
     <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.6.1.7" />
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout" Version="2.1.4.10" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.10.0.3" />
+    <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.6.2.2" />
+
   </ItemGroup>
   <ItemGroup>
     <GradleRepository Include="https://tfsdrivesmart.pkgs.visualstudio.com/5243836b-8777-4cb6-aded-44ab518bc748/_packaging/Android_Libraries/maven/v1">
