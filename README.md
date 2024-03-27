@@ -36,7 +36,7 @@ partial class MainActivity
 1/ Add the NuGet package
 
 ```xml
-<PackageReference Include="DriveSmart.DSTracker" Version="1.5.80" />
+<PackageReference Include="DriveSmart.DSTracker" Version="1.5.80.1" />
 ```
 
 2/ Amend your CSPROJ file to have these lines
